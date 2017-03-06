@@ -1,0 +1,2 @@
+<td data-client-uid="{{ (string) $client->getProperty('client_unique_identifier') }}">{{ (string) $client->getProperty('client_nickname') }}</td>
+<td>{{ date("Y-m-d H:i:s", $client->infoDb()['client_lastconnected']) }}</td>

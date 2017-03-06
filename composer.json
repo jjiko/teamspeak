@@ -1,0 +1,22 @@
+{
+    "name": "jiko/teamspeak",
+    "description": "teamspeak3 UI",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joe Jiko",
+            "email": "me@joejiko.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/support": "^5",
+        "planetteamspeak/ts3-php-framework": "~1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Theomessin\\Teamspeak\\": "src/"
+        }
+    }
+}
