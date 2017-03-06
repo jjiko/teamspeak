@@ -1,5 +1,5 @@
 <?php
-namespace Jiko\Sinusbot;
+namespace Jiko\Teamspeak\Sinusbot;
 
 class SinusBot
 {

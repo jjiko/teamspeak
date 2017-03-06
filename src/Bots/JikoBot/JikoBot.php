@@ -7,7 +7,7 @@
  *          main directory for more details.
  */
 
-namespace com\examples\bots\jikobot;
+namespace Jiko\Teamspeak\Bots\JikoBot;
 use com\tsphpbots\bots\BotBase;
 use com\tsphpbots\utils\Log;
 

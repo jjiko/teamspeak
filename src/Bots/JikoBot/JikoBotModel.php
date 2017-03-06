@@ -7,7 +7,7 @@
  *          main directory for more details.
  */
 
-namespace com\examples\bots\jikobot;
+namespace Jiko\Bots\JikoBot;
 
 /**
  * Data model for greeting bot
