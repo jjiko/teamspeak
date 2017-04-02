@@ -1,2 +1,5 @@
+@include('teamspeak::my_privelege_key')
+@include('teamspeak::messages')
+@include('teamspeak::my_info')
 @include('teamspeak::client_info_table')
 @include('teamspeak::kick_vashton')

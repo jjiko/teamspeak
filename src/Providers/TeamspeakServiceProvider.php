@@ -6,25 +6,21 @@ use Illuminate\Support\ServiceProvider;
 
 class TeamspeakServiceProvider extends ServiceProvider
 {
-  public function boot()
-  {
-
-  }
-
   public function register()
   {
     $this->app->register('Jiko\Teamspeak\Providers\RouteServiceProvider');
-    $this->app->singleton('teamspeak', function ($app) {
-      $nicknames = ['God', 'Satan', 'Kame-Sama'];
-      $nickname = $nicknames[array_rand($nicknames, 1)].rand(1000,10000);
-      $opt = (object)[
-        'user' => urlencode(getenv('TS3_USER')),
-        'pass' => urlencode(getenv('TS3_PASS')),
-        'server' => urlencode(getenv('TS3_SERVER')),
-        'server_query_port' => urlencode(getenv('TS3_SQPORT')),
-        'port' => urlencode(getenv('TS3_PORT'))
-      ];
-      return \TSFramework\Teamspeak::factory("serverquery://{$opt->user}:{$opt->pass}@{$opt->server}:{$opt->server_query_port}/?server_port={$opt->port}&nickname={$opt->nickname}");
+    $this->app->singleton(\Teamspeak3::class, function ($app) {
+      $nicknames = ['God', 'Satan', 'かめさま', 'Supreme Overlord'];
+
+      return \TeamSpeak3::factory(vsprintf('serverquery://%1$s:%2$s@%3$s:%4$s/?server_port=%5$s&nickname=%6$s', [
+        'user' => urlencode(env('TS3_USER')),
+        'pass' => urlencode(env('TS3_PASS')),
+        'server' => urlencode(env('TS3_SERVER')),
+        'server_query_port' => urlencode(env('TS3_SQPORT')),
+        'port' => urlencode(env('TS3_PORT')),
+        'nickname' => urlencode($nicknames[array_rand($nicknames, 1)])
+      ]));
     });
+
   }
 }
