@@ -34,7 +34,7 @@ class TeamspeakAdminController extends Controller
 
   protected function buildMessage($message)
   {
-    return $message . " >> blame " . auth()->user()->name;
+    return $message . " >> blame " . auth()->user()->TSUser->nickname;
   }
 
   public function kick($uid, Array $properties)
